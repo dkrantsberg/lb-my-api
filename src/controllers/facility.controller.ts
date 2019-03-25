@@ -1,8 +1,7 @@
 import {Count, CountSchema, Filter, repository, Where} from '@loopback/repository';
-import {post, param, get, getFilterSchemaFor, getWhereSchemaFor, patch, put, del, requestBody} from '@loopback/rest';
+import {param, get, getFilterSchemaFor, getWhereSchemaFor} from '@loopback/rest';
 import {Facility} from '../models';
 import {FacilityRepository} from '../repositories';
-import * as _ from 'lodash';
 
 export class FacilityController {
   constructor(
@@ -37,5 +36,4 @@ export class FacilityController {
   async find(@param.query.object('filter', getFilterSchemaFor(Facility)) filter?: Filter): Promise<Facility[]> {
     return await this.facilityRepository.find(filter);
   }
-
 }

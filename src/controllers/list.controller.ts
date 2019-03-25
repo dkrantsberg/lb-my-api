@@ -55,6 +55,7 @@ export class ListController {
     }
   })
   async find(@param.query.object('filter', getFilterSchemaFor(List)) filter?: Filter): Promise<List[]> {
+    console.log('#### Getting Facility list #####');
     filter = _.set(filter || {}, 'where.facilityId', this.facilityId);
     return await this.listRepository.find(filter);
   }

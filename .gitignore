@@ -62,6 +62,5 @@ api-docs/
 
 # Transpiled JavaScript files from Typescript
 /dist
-.idea/
 .mongodb
 /config/local.ts
